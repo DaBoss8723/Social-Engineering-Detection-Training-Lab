@@ -1,0 +1,18 @@
+<!-- ============ SOCIAL ENGINEERING / SYSMON NETWORK CONNECTION ============ -->
+
+  <rule id="100025" level="8">
+    <if_sid>92107</if_sid>
+    <match>Network connection detected</match>
+    <regex>DestinationIp: 192\.168\.100\.100</regex>
+    <description>Sysmon - Outbound connection detected to Kali attacker host (192.168.100.100)</description>
+    <mitre>
+      <id>T1566</id>
+    </mitre>
+  </rule>
+
+  <rule id="100026" level="3">
+    <decoded_as>windows_eventchannel</decoded_as>
+    <description>TEST RULE - matches any Windows eventchannel log from any source</description>
+  </rule>
+
+</group>
